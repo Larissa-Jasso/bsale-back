@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Especificaciones
+## Especificaciones:
 <p> 
 
 ## Instalar vendor: Correr el comando de 'composer install' para generar el vendor
