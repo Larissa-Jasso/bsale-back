@@ -10,9 +10,9 @@
 ## Especificaciones
 <p> 
 
-Instalar vendor: Correr el comando de 'composer install' para generar el vendor
-Levantar servidor (para correr en modo local): php artisan serve --host=localhost --port=8000
-El env ya se encuentra en modo de produccion
+## Instalar vendor: Correr el comando de 'composer install' para generar el vendor
+## Levantar servidor (para correr en modo local): php artisan serve --host=localhost --port=8000
+## El env ya se encuentra en modo de produccion
 </p>
     
 
