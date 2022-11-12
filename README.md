@@ -64,9 +64,9 @@ response:
 -   category: Categoria a la que pertenece el producto (int).
 
 
-   ## POST api/search_product retornara los productos filtrados por la nombre: 
+   ## GET api/search_product/{NAME} retornara los productos filtrados por la nombre: 
    params:{
-    name:string,
+    name:string (enviada en url),
 }
 headers:{
     Accept: application/json

@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/categories', [ProductController::class, 'Categories']);
 Route::get('/products', [ProductController::class, 'Products']);
 Route::get('/produts_by_category/{id}', [ProductController::class, 'ProductsByCategory']);
-Route::post('/search_product', [ProductController::class, 'SearchProduct']);
-Route::post('/sorter_product', [ProductController::class, 'SorterProduct']);
+Route::get('/search_product/{name}', [ProductController::class, 'SearchProduct']);
+Route::get('/sorter_product/{option}', [ProductController::class, 'SorterProduct']);
 

@@ -40,10 +40,31 @@ class ProductController extends Controller
             return $th->getMessage();
         }
     }
-    public function SearchProduct(Request $request)
+
+    public function SearchProduct($name)
     {
         try {
-            $products = Product::where('name', $request->name)->get();
+            $products = Product::where('name', 'like',"%{$name}%")->get();
+
+            return response()->json($products);
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
+    }
+
+    public function SorterProduct($option)
+    {
+        try {
+            if($option==1){
+                $products = Product::orderBy('name','asc')->get();
+
+            }else if($option==2){
+                $products = Product::orderBy('price','asc')->get();
+
+            }else if($option==3){
+                $products = Product::where('discount','!=',0)->get();
+
+            }
 
             return response()->json($products);
         } catch (\Throwable $th) {
