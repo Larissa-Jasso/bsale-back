@@ -20,6 +20,16 @@ class ProductController extends Controller
         }
     }
 
+    public function Products()
+    {
+        try {
+            $products = Product::all();
+
+            return response()->json($products);
+        } catch (\Throwable $th) {
+            return $th->getMessage();
+        }
+    }
     public function ProductsByCategory($id)
     {
         try {
