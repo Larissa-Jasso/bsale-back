@@ -12,8 +12,8 @@
 
 ## GET api/categories retornara todas las categorias existentes:
 
-headers:{
-Accept: application/json
++ headers:{
++ Accept: application/json
 }
 response:
 [
@@ -33,17 +33,18 @@ response:
 
 ## POST api/produts retornara los productos filtrados por la categoria, nombre, precio, descuento, alfabeticamente:
 
-params:{
++ params:{
 -    name: string,
 -    category: int,
 -    alphabetic: boolean,
 -    price: boolean,
 -    discount: boolean,
 }
-headers:{
+
++ headers:{
 Accept: application/json
 }
-response:
++ response:
 [
 
 {
