@@ -34,11 +34,11 @@ response:
 ## POST api/produts retornara los productos filtrados por la categoria, nombre, precio, descuento, alfabeticamente:
 
 params:{
-    name: string,
-    category: int,
-    alphabetic: boolean,
-    price: boolean,
-    discount: boolean,
+-    name: string,
+-    category: int,
+-    alphabetic: boolean,
+-    price: boolean,
+-    discount: boolean,
 }
 headers:{
 Accept: application/json
