@@ -20,55 +20,34 @@ class ProductController extends Controller
         }
     }
 
-    public function Products()
+    public function Products(Request $request)
     {
+
         try {
-            $products = Product::all();
+            $products = Product::select('*');
 
-            return response()->json($products);
-        } catch (\Throwable $th) {
-            return $th->getMessage();
-        }
-    }
-    public function ProductsByCategory($id)
-    {
-        try {
-            $products = Product::where('category', $id)->get();
-
-            return response()->json($products);
-        } catch (\Throwable $th) {
-            return $th->getMessage();
-        }
-    }
-
-    public function SearchProduct($name)
-    {
-        try {
-            $products = Product::where('name', 'like',"%{$name}%")->get();
-
-            return response()->json($products);
-        } catch (\Throwable $th) {
-            return $th->getMessage();
-        }
-    }
-
-    public function SorterProduct($option)
-    {
-        try {
-            if($option==1){
-                $products = Product::orderBy('name','asc')->get();
-
-            }else if($option==2){
-                $products = Product::orderBy('price','asc')->get();
-
-            }else if($option==3){
-                $products = Product::where('discount','!=',0)->get();
-
+            if ($request->name !== null) {
+                $products->where('name', 'like', "%{$request->name}%");
             }
 
-            return response()->json($products);
+            if ($request->category !== null) {
+                $products->where('category', $request->category);
+            }
+
+            if ($request->alphabetic == true) {
+                $products->orderBy('name', 'asc');
+            }
+            if ($request->price == true) {
+                $products->orderBy('price', 'asc');
+            }
+            if ($request->discount == true) {
+                $products->where('discount', '!=', 0);
+            }
+            return response()->json($products->get());
+
         } catch (\Throwable $th) {
             return $th->getMessage();
         }
     }
+ 
 }
