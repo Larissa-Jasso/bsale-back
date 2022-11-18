@@ -1,14 +1,16 @@
+
 ## Especificaciones:
-
-<p>
-
+## Lenguaje PHP, framework de Laravel.
 ## Instalar vendor: Correr el comando de 'composer install' para generar el vendor
-
 ## Levantar servidor (para correr en modo local): php artisan serve --host=localhost --port=8000
+## El env ya se encuentra en modo de produccion.
 
-## El env ya se encuentra en modo de produccion
+## Estructura:
+## La seccion de apis se encuentra en la carpeta de app/http/controllers/ProductController
+## La seccion de rutas se encuentra en la carpeta de routes/api.php
 
-</p>
+## Objetivo: Permitir al usuario obtener las categorias existentes asi como los productos en general o bien filtrarlos por los parametros de categoria, nombre, precio, descuento o alfabeticamente.
+
 
 ## GET api/categories retornara todas las categorias existentes:
 
@@ -31,7 +33,7 @@ response:
 -   id: Identificar de la categoria (PK).
 -   name: Nombre de la categoria.
 
-## POST api/produts retornara los productos filtrados por la categoria, nombre, precio, descuento, alfabeticamente:
+## POST api/produts retornara los productos filtrados acorde los parametros recibidos, es decir por la categoria, nombre, precio, descuento o alfabeticamente segun sea el caso:
 
 + params:{
 -    name: string,

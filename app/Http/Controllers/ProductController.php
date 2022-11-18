@@ -6,8 +6,11 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
+
 class ProductController extends Controller
 {
+    // APi para mostrar todas las categorias existentes
     public function Categories()
     {
         try {
@@ -20,9 +23,9 @@ class ProductController extends Controller
         }
     }
 
+    // Api para filtrar los productos acorde los parametros recibidos
     public function Products(Request $request)
     {
-
         try {
             $products = Product::select('*');
 
@@ -44,10 +47,8 @@ class ProductController extends Controller
                 $products->where('discount', '!=', 0);
             }
             return response()->json($products->get());
-
         } catch (\Throwable $th) {
             return $th->getMessage();
         }
     }
- 
 }
